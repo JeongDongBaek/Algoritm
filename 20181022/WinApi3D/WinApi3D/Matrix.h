@@ -20,6 +20,7 @@ public:
 
 	Matrix(int dimension);
 	
+
 	void ReSize(int dimension);
 	int Dimension();
 
@@ -42,7 +43,7 @@ public:
 	float getCofactor(int row, int col); // 여인수행렬
 	float getMinor(int row, int col); // 소행렬
 
-
+	void Print();
 	Matrix();
 	~Matrix();
 

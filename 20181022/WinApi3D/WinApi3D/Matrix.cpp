@@ -195,27 +195,67 @@ Matrix Matrix::TransPose() // 전치행렬
 
 Matrix Matrix::Inverse(OUT float & determinant)
 {
-	return Matrix();
+	Matrix matRet = Matrix::Identity(Dimension());
+	determinant = Determinent();
+	
+	if (-EPSILON < determinant && determinant < EPSILON)
+		return matRet;
+
+	Matrix matAdj = Adjoint();
+	matRet = matAdj * (1 / determinant);
+
+	return matRet;
+
 }
 
 float Matrix::Determinent()
 {
 	// ad -bc
 
+	
+	if (Dimension() == 2)
+	{
+		return ((*this)[0][0] * (*this)[1][1] - (*this)[0][1] * (*this)[1][0]);
+	}
 
-
-
-	return 0.0f;
+	float det = 0.0f;
+	for (int i = 0; i < Dimension(); ++i)
+	{
+		det += ((*this)[i][0] * getCofactor(i, 0));
+	}
+	
+	return det;
 }
 
 Matrix Matrix::Adjoint()
 {
+
+
+	int dimension = Dimension();
+	Matrix matRet = Matrix::Identity(Dimension());
+
+	for (int i = 0; i < dimension; ++i)
+	{
+		for (int j = 0; j < dimension; ++j) // 정사각 행렬이므로
+		{
+			matRet[i][j] = getCofactor(i, j);
+		}
+	}
+
+
 	return Matrix();
 }
 
 float Matrix::getCofactor(int row, int col)
 {
-	
+	// - 1^(i + j ) * Minor(i, j )
+	int sign = 1;
+	if ((row + col) % 2 != 0)
+		sign = -1;
+
+	return sign * getMinor(row, col);
+
+
 
 
 	return 0.0f;
@@ -223,20 +263,44 @@ float Matrix::getCofactor(int row, int col)
 
 float Matrix::getMinor(int row, int col) // 4 x 4 행렬이라고 가정한다.
 {
-	Matrix temp;
+	// row , col 제외하고 한 차수 낮은 행렬로 변환한다.
+	// 변환된 행력의 Determinent() 리턴
 
-	for (int i = 0; i < Determinent(); ++i)
+	int dimension = Dimension();
+	Matrix metMinor(Dimension() - 1);
+	
+	int rowMinor = 0;
+	int colMinor = 0;
+
+	for (int i = 0; i < dimension; ++i)
 	{
-		for (int j = 0; j < Determinent(); ++j)
+		if (i == row)
+			continue;
+
+		for (int j = 0; j < dimension; ++j)
 		{
-			if (i == row || j == col) continue; // 해당되는 행과 열은 제외된다.
-			
-			temp.m_vecData
+			if (j == col)
+				continue;
+
+			metMinor[rowMinor][colMinor] = (*this)[i][j];
+			colMinor++;
 		}
+		rowMinor++;
 	}
 
 
 	return 0.0f;
 }
 
+
+void Matrix::Print()
+{
+
+
+
+
+
+
+
+}
 

@@ -41,6 +41,9 @@
     <ClCompile Include="Matrix.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="WinApi3D.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WinApi3D.rc">
