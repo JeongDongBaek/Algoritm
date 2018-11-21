@@ -1,8 +1,0 @@
-﻿  stdafx.cpp
-  matrix.cpp
-c:\users\5_kga_4\downloads\20181120\matrixtest\matrixtest\matrix.cpp(72): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  matrixTest.cpp
-c:\users\5_kga_4\downloads\20181120\matrixtest\matrixtest\matrixtest.cpp(9): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\5_kga_4\downloads\20181120\matrixtest\matrixtest\matrixtest.cpp(20): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  matrixTest.vcxproj -> C:\Users\5_KGA_4\Downloads\20181120\matrixTest\x64\Debug\matrixTest.exe

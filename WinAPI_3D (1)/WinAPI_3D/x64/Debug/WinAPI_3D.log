@@ -1,0 +1,6 @@
+﻿  WinAPI_3D.cpp
+c:\users\5_kga_4\desktop\개인포폴\algorithm\algoritm\winapi_3d (1)\winapi_3d\winapi_3d.cpp(92): warning C4244: 'return': 'WPARAM'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  mainGame.cpp
+c:\users\5_kga_4\desktop\개인포폴\algorithm\algoritm\winapi_3d (1)\winapi_3d\maingame.cpp(82): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  WinAPI_3D.vcxproj -> C:\Users\5_KGA_4\Desktop\개인포폴\Algorithm\Algoritm\WinAPI_3D (1)\x64\Debug\WinAPI_3D.exe
