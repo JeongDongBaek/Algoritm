@@ -55,6 +55,9 @@ public:
 	static matrix RotationY(float angle);
 	static matrix RotationZ(float angle);
 
+
+	// 로컬스페이스 : 기준좌표가 객체기준  /  월드스페이스 : 기준점을 무조건 0,0으로 잡고 객체마다 고유한 좌표를 가지고 있음  
+
 	// 렌더링 파이프라인 관련
 	static matrix View(vector3& eye, vector3& lookAt, vector3& up);
 	static matrix Projection(float fovY, float aspect, float nearZ, float farZ);

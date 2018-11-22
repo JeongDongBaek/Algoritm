@@ -130,7 +130,7 @@ matrix matrix::operator-(matrix & mat)
 	}
 
 	return matRet;
-}
+} 
 
 matrix matrix::operator*(matrix & mat)
 {
@@ -343,8 +343,8 @@ matrix matrix::Projection(float fovY, float aspect, float nearZ, float farZ)
 {
 	matrix matRet = matrix::Identity(4);
 
-	float scaleX = 1.0f / tanf(fovY / 2.0f);
-	float scaleY = scaleX / aspect;
+	float scaleY = 1.0f / tanf(fovY / 2.0f);
+	float scaleX = scaleY / aspect;
 
 	matRet[0][0] = scaleX;
 	matRet[1][1] = scaleY;
